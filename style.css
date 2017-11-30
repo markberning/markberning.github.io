@@ -26,19 +26,19 @@ header, footer {
   background: #40788E;
 }
 header h1, header h2 {
-  color: #C5DDE8;
+  color: #e2cab7;
 }
 
 /* Work Experience
 -----------------------*/
 .work {
-  background: #9FB9C4;
+  background: #9ba0a3;
   color: #23424E;
 }
 
 /* Education
 -----------------------*/
 .education {
-  background: #A4CBDB;
+  background: #a39a94;
   color: #23424E;
 }
