@@ -11,9 +11,18 @@
 
 /* Global styles
 -----------------------*/
+/* border box fix - apply a natural box layout model to all elelments, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
+  background: #40788E;
   font-family: 'Brandon Grotesque', sans-serif;
   color: #DBDDDE;
+  margin: 0;
 }
 a {
   color: #DBDDDE;
@@ -24,12 +33,55 @@ a:hover {
 h1, h2 {
   font-family: 'T.26 Carbon', monospace;
   font-weight: 100;
+  margin: 0;
 }
 h1 {
-  font-size: 80px;
+  font-size: 35px;
 }
 h2 {
-  font-size: 40px;
+  font-size: 25px;
+  margin-top: 0;
+}
+h3, p {
+  /*margin: 20px 0;*/
+}
+
+.content-wrap {
+  overflow: auto; /* clears floats */
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.col-narrow {
+  width: 30%;
+  float: left;
+}
+.col-wide {
+  width: 70%;
+  float: left;
+  padding-left: 20px /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
+}
+hr.hr {
+  position: relative;
+  top: 15px;
+	border-top: 1px solid #8c8b8b;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 1px solid #9ba0a3;
+	text-align: center;
+  }
+hr.hr:after {
+	content: 'MB';
+	display: inline-block;
+	position: relative;
+	top: -14px;
+	padding: 0 10px;
+	background: #9ba0a3;
+	color: #8c8b8b;
+	font-size: 12px;
+	/*-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	transform: rotate(60deg);*/
 }
 
 /* Header and Footer
@@ -37,8 +89,34 @@ h2 {
 header, footer {
   background: #40788E;
 }
+
+/* header */
+.profile-image {
+  /*float: left;
+  width: 125px;
+  margin-right: 20px;*/
+  border-radius: 10px;
+}
+header {
+  /*margin-bottom: 0px;*/
+  /*text-align: center;*/
+}
+
+header p {
+  letter-spacing: 1px;
+}
 header h1, header h2 {
   color: #e2cab7;
+}
+
+/* footer */
+footer {
+  text-align: center;
+}
+
+.contact-info a {
+  display: inline-block;
+  padding: 10px;
 }
 
 /* Work Experience
