@@ -12,7 +12,7 @@
 /* Global styles
 -----------------------*/
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Brandon Grotesque', sans-serif;
   color: #DBDDDE;
 }
 a {
@@ -22,7 +22,8 @@ a:hover {
   text-decoration: none;
 }
 h1, h2 {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'T.26 Carbon', monospace;
+  font-weight: 100;
 }
 h1 {
   font-size: 80px;
