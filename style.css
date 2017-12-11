@@ -70,6 +70,13 @@ h3 {
   padding-left: 20px; /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
   /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
 }
+.btn {
+  text-decoration: none;
+  background: #a39a94;
+  /*color: #40788E;*/
+  padding: 5px 20px;
+  display: inline-block; /*in order to add padding properly to a normally inline element (<a>)*/
+}
 hr.hr {
   position: relative;
   top: 15px;
@@ -106,20 +113,23 @@ header, footer {
 }
 
 /* header */
-.profile-image {
-  /*float: left;
-  width: 125px;
-  margin-right: 20px;*/
-  border-radius: 10px;
-}
 header {
   padding-top: 25px;/*put extra space at top of header to push header content down past fixed top nav, using padding here also makes page return to very top when clicking 'about' link (instead of returning almost to top of first element, leaving a small space yet to scroll).*/
+  position: relative; /*so that we can set the btn to position: absolute and still contain inside the header*/
 }
 header p {
   letter-spacing: 1px;
 }
 header h1, header h2 {
-  color: #e2cab7;
+  color: #DBDDDE;
+}
+.profile-image {
+  border-radius: 10px;
+}
+.download {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* footer */
@@ -136,15 +146,15 @@ footer {
 -----------------------*/
 nav {
   text-align: center;
-  background: white;
+  background: #a39a94;
   position: fixed;
   top: 0;
   width: 100%; /*force nav element to span entire width*/
-  opacity: 0.8;
+  /*opacity: 0.8;*/
   z-index: 100;
 }
 nav a {
-  color: #40788E;
+  /*color: #40788E;*/
   font-size: .9rem;
   display: inline-block; /*in oder to add padding to the link*/
   padding: 5px 40px;
