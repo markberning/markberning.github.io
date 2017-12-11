@@ -125,6 +125,7 @@ header h1, header h2 {
 }
 .profile-image {
   border-radius: 10px;
+  max-width: 180px;
 }
 .download {
   position: absolute;
@@ -135,6 +136,9 @@ header h1, header h2 {
 /* footer */
 footer {
   text-align: center;
+}
+footer p {
+  margin: 0;
 }
 .contact-info a {
   display: inline-block;
