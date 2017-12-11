@@ -9,7 +9,13 @@
 </head>
 <body>
     <!-- // Intro -->
-    <header>
+    <header id="about">
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <div class="content-wrap">
         <img class="profile-image col-narrow" src="assets/coffee-code-wide-sm.jpg" alt="Mark coffee cup reflection Berning">
         <div class="col-wide"><!-- Adding incase text in <p> below gets so long that it wraps under profile img, which I don't want, creating this box around the text and css will keep the text in a column. Added col-narrow to the img because that will be the left column and needs css -->
@@ -22,19 +28,19 @@
 
     <main>
         <!-- // Work Experience -->
-        <section class="work">
+        <section id="work" class="work">
           <div class="content-wrap">
             <h2>Work Experience</h2>
 
             <!-- Job Details: copy this whole block to add more jobs -->
             <div class="col-narrow">
               <h3>Art/Technical Director</h3>
-              <p>Ceremony Magazine</p>
+              <p class="uppercase">Ceremony Magazine</p>
               <p>2008 to present</p>
             </div><!-- end col-narrow -->
 
             <!-- Add as many paragraphs as you need. -->
-            <div class="col-wide">
+            <div class="col-wide job-desc">
               <p>As Technical Director I am responsible for all programming, web development, and cloud and computer support for Ceremony. </p>
               <p>As Art Director I am responsible for the complete digital construction of the magazine, print house communications and freelance hire supervision.</p>
 
@@ -49,11 +55,11 @@
             <hr class="hr">
             <div class="col-narrow">
               <h3>Network Analyst</h3>
-              <p>University of Illinois Urbana-Champaign</p>
+              <p class="uppercase">University of Illinois <span class="nowrap">Urbana-Champaign</span></p>
               <p>2001-2008</p>
             </div><!-- end col-narrow -->
               <!-- Add as many paragraphs as you need. -->
-              <div class="col-wide">
+              <div class="col-wide job-desc">
               <p>As Network Analyst for the Division of Rehabilitation Education Services at UIUC I was responsible for all network server administration, computer helpdesk support and web development for the division. </p>
               <!-- This list can be deleted if you don't want to use it. -->
               <p>Platforms/Languages:</p>
@@ -69,7 +75,7 @@
 
 
         <!-- // Education -->
-        <section class="education">
+        <section id="education" class="education">
           <div class="content-wrap">
             <h2>Education</h2>
 
@@ -93,7 +99,7 @@
         <h2>Let's Keep in Touch!</h2>
 
         <!-- Social media and contact links. Add or remove any networks. -->
-        <div class="contact-info">
+        <div id="contact" class="contact-info">
             <a href="mailto:mark@markberning.com">mark@markberning.com</a>
             <a href="https://flatbubba.github.io" target="_blank">flatbubba.github.io</a>
             <a href="http://twitter.com/markberning" target="_blank">Twitter</a>

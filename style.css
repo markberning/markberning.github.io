@@ -35,37 +35,45 @@ a:hover {
 h1, h2 {
   font-family: 'T.26 Carbon', monospace;
   font-weight: 100;
-  margin: 0;
+  /*margin: 0;*/
 }
 h1 {
   font-size: 35px;
+  margin: 0;
 }
 h2 {
   font-size: 25px;
-  margin-top: 0;
+  margin: 0;
 }
-h3, p {
-  /*margin: 20px 0;*/
+h3 {
+  font-size: 21px;
+  margin: 0;
 }
 
 .content-wrap {
   overflow: auto; /* clears floats */
   max-width: 950px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px 30px;
+}
+.content-wrap h2 {
+  margin-bottom: 15px;
 }
 .col-narrow {
   width: 30%;
   float: left;
+  /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
 }
 .col-wide {
   width: 70%;
   float: left;
-  padding-left: 20px /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
+  padding-left: 20px; /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
+  /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
 }
 hr.hr {
   position: relative;
   top: 15px;
+  margin-bottom: 45px;
 	border-top: 1px solid #8c8b8b;
   border-bottom: 0;
   border-left: 0;
@@ -85,7 +93,12 @@ hr.hr:after {
 	-moz-transform: rotate(60deg);
 	transform: rotate(60deg);*/
 }
-
+.uppercase {
+  text-transform: uppercase;
+}
+.nowrap {
+  white-space: nowrap;
+}
 /* Header and Footer
 -----------------------*/
 header, footer {
@@ -100,10 +113,8 @@ header, footer {
   border-radius: 10px;
 }
 header {
-  /*margin-bottom: 0px;*/
-  /*text-align: center;*/
+  padding-top: 25px;/*put extra space at top of header to push header content down past fixed top nav, using padding here also makes page return to very top when clicking 'about' link (instead of returning almost to top of first element, leaving a small space yet to scroll).*/
 }
-
 header p {
   letter-spacing: 1px;
 }
@@ -121,11 +132,45 @@ footer {
   padding: 10px;
 }
 
+/* Navigation
+-----------------------*/
+nav {
+  text-align: center;
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%; /*force nav element to span entire width*/
+  opacity: 0.8;
+  z-index: 100;
+}
+nav a {
+  color: #40788E;
+  font-size: .9rem;
+  display: inline-block; /*in oder to add padding to the link*/
+  padding: 5px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
 /* Work Experience
 -----------------------*/
 .work {
   background: #ADB1B3;
   color: #23424E;
+}
+/*remove margin on all siblings paras of an h3*/
+h3 ~ p {
+  margin: 0;
+}
+.job-desc {
+  margin-bottom: 20px;
+}
+/*remove top margin from just the first para of the job descriptions*/
+.job-desc p:first-of-type {
+  margin-top: 0;
 }
 
 /*.work:hover {
@@ -137,4 +182,8 @@ footer {
 .education {
   background: #a39a94;
   color: #23424E;
+}
+/*apply top margin to any h3s that follow a p tag*/
+p + h3 {
+  margin-top: 10px
 }
