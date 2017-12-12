@@ -1,5 +1,5 @@
 /* Color Palette
------------------------*/
+---------------------------------------------------------------------------*/
 /*#40788E - cup-color
   #9ba0a3 - table-color
   #ADB1B3 - table-color-light
@@ -11,7 +11,7 @@
 
 
 /* Global styles
------------------------*/
+---------------------------------------------------------------------------*/
 /* border box fix - apply a natural box layout model to all elelments, but allowing components to change */
 html {
   box-sizing: border-box;
@@ -21,8 +21,9 @@ html {
 }
 
 body {
-  background: #40788E;
+  background: #40788E; /*prevents white color of page from showing below footer when footer doesn't extend to bottom of window.*/
   font-family: 'Brandon Grotesque', sans-serif;
+  font-size: .9rem;
   color: #DBDDDE;
   margin: 0;
 }
@@ -38,18 +39,17 @@ h1, h2 {
   /*margin: 0;*/
 }
 h1 {
-  font-size: 35px;
-  margin: 0;
+  font-size: 25px;
+  margin: 0 0 10px 0;
 }
 h2 {
-  font-size: 25px;
+  font-size: 20px;
   margin: 0;
 }
 h3 {
-  font-size: 21px;
+  font-size: 15px;
   margin: 0;
 }
-
 .content-wrap {
   overflow: auto; /* clears floats */
   max-width: 950px;
@@ -106,8 +106,9 @@ hr.hr:after {
 .nowrap {
   white-space: nowrap;
 }
+
 /* Header and Footer
------------------------*/
+---------------------------------------------------------------------------*/
 header, footer {
   background: #40788E;
 }
@@ -115,7 +116,7 @@ header, footer {
 /* header */
 header {
   padding-top: 25px;/*put extra space at top of header to push header content down past fixed top nav, using padding here also makes page return to very top when clicking 'about' link (instead of returning almost to top of first element, leaving a small space yet to scroll).*/
-  position: relative; /*so that we can set the btn to position: absolute and still contain inside the header*/
+  position: relative;
 }
 header p {
   letter-spacing: 1px;
@@ -123,12 +124,19 @@ header p {
 header h1, header h2 {
   color: #DBDDDE;
 }
+.header-wrap {
+  position: relative; /*so that we can set the btn to position: absolute and still contain inside the header*/
+}
 .profile-image {
   border-radius: 10px;
-  max-width: 180px;
+  max-width: 200px;
+}
+.code-icons {
+  opacity: 0.3;
 }
 .download {
-  position: absolute;
+  /*background-image: url(assets/black-linen.png);*/
+  position: absolute; /*must set parent container to position:relative to keep .download contained*/
   right: 0;
   bottom: 0;
 }
@@ -136,6 +144,7 @@ header h1, header h2 {
 /* footer */
 footer {
   text-align: center;
+  height: 100%;
 }
 footer p {
   margin: 0;
@@ -149,7 +158,7 @@ footer p {
 }
 
 /* Navigation
------------------------*/
+---------------------------------------------------------------------------*/
 nav {
   text-align: center;
   background: #a39a94;
@@ -171,11 +180,19 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Main
+---------------------------------------------------------------------------*/
+main {
+  background: white; /*to prevent the dark green color of the body to show through the .work and .education divs when they are set to transparent. Also prevents hr from showing through.*/
+}
+
 /* Work Experience
------------------------*/
+---------------------------------------------------------------------------*/
 .work {
   background: #ADB1B3;
   color: #23424E;
+  background: linear-gradient(rgba(173, 177, 179, 0.8), rgba(173, 177, 179, 0.8)),
+                 url(assets/black-linen.png);
 }
 /*remove margin on all siblings paras of an h3*/
 h3 ~ p {
@@ -194,10 +211,12 @@ h3 ~ p {
 }*/
 
 /* Education
------------------------*/
+---------------------------------------------------------------------------*/
 .education {
-  background: #a39a94;
+  /*background: #a39a94;*/
   color: #23424E;
+  background: linear-gradient(rgba(163, 154, 148, 0.8), rgba(163, 154, 148, 0.8)),
+                 url(assets/black-linen.png);
 }
 /*apply top margin to any h3s that follow a p tag*/
 p + h3 {
