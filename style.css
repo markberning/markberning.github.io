@@ -59,17 +59,6 @@ h3 {
 .content-wrap h2 {
   margin-bottom: 15px;
 }
-.col-narrow {
-  width: 30%;
-  float: left;
-  /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
-}
-.col-wide {
-  width: 70%;
-  float: left;
-  padding-left: 20px; /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
-  /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
-}
 .btn {
   text-decoration: none;
   background: #a39a94;
@@ -116,7 +105,7 @@ header, footer {
 /* header */
 header {
   padding-top: 25px;/*put extra space at top of header to push header content down past fixed top nav, using padding here also makes page return to very top when clicking 'about' link (instead of returning almost to top of first element, leaving a small space yet to scroll).*/
-  position: relative;
+  /*position: relative;*/
 }
 header p {
   letter-spacing: 1px;
@@ -133,6 +122,7 @@ header h1, header h2 {
 }
 .code-icons {
   opacity: 0.3;
+  font-size: 0.6rem;
 }
 .download {
   /*background-image: url(assets/black-linen.png);*/
@@ -185,6 +175,23 @@ nav a:hover {
 main {
   background: white; /*to prevent the dark green color of the body to show through the .work and .education divs when they are set to transparent. Also prevents hr from showing through.*/
 }
+/*when viewport is smaller than 900px put bottom margin on the last <p> in col-narrow in order to add space before content from col-wide displays, which will be directly under it since it will be a single column*/
+img.col-narrow {
+  float: left;
+  padding-right: 20px;
+}
+.col-narrow p:last-child {
+  margin-bottom: 20px;
+}
+/*remove margin on all siblings paras of an h3*/
+h3 ~ p {
+  margin: 0;
+}
+/*apply top margin to any h3s that follow a p tag*/
+p + h3 {
+  margin-top: 10px
+}
+
 
 /* Work Experience
 ---------------------------------------------------------------------------*/
@@ -194,10 +201,7 @@ main {
   background: linear-gradient(rgba(173, 177, 179, 0.8), rgba(173, 177, 179, 0.8)),
                  url(assets/black-linen.png);
 }
-/*remove margin on all siblings paras of an h3*/
-h3 ~ p {
-  margin: 0;
-}
+
 .job-desc {
   margin-bottom: 20px;
 }
@@ -218,7 +222,63 @@ h3 ~ p {
   background: linear-gradient(rgba(163, 154, 148, 0.8), rgba(163, 154, 148, 0.8)),
                  url(assets/black-linen.png);
 }
-/*apply top margin to any h3s that follow a p tag*/
-p + h3 {
-  margin-top: 10px
+
+
+/* Media Queries
+---------------------------------------------------------------------------*/
+@media (min-width: 900px) {
+  .col-narrow {
+    width: 30%;
+    float: left;
+    /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
+  }
+  .col-wide {
+    width: 70%;
+    float: left;
+    padding-left: 10px; /* since we are using the box model fix padding doesn't affect the width of the container and hence won't cause the floated element to be pushed down*/
+    /*min-height: 175px;*//*use if right cols become shorter than left cols to keep next row below in place*/
+  }
+  .code-icons {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 23px;
+  }
+  header h2 {
+    font-size: 18px;
+  }
+  nav a {
+    padding: 5px 10px;
+  }
+  .profile-image {
+    max-width: 190px;
+  }
+  .code-icons {
+    font-size: .5rem;
+  }
+}
+@media (max-width: 550px) {
+
+  .btn-text {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  header {
+    background: linear-gradient(rgba(64, 120, 142, 0.9), rgba(64, 120, 142, 0.9)), url(assets/coffee-code-wide-sm.jpg) no-repeat 0px 70px;
+    background-size: conver;
+    padding-top: 100px;
+  }
+  nav a {
+    display: block;
+  }
+  .profile-image {
+    /*max-width: 100px;*/
+    display: none;
+  }
+  .code-icons {
+    opacity: 1.0;
+  }
 }
