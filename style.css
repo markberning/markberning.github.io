@@ -223,6 +223,9 @@ p + h3 {
                  url(assets/black-linen.png);
 }
 
+#education .content-wrap h2:nth-child(4) {
+  padding-top: 20px;
+}
 
 /* Media Queries
 ---------------------------------------------------------------------------*/
